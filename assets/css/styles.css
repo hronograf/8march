@@ -134,6 +134,9 @@ body {
 .heart {
   position: absolute;
   font-size: 1.5rem;
+  line-height: 1;
+  width: 1em;
+  text-align: center;
   opacity: 0.3;
   animation: float 8s ease-in-out infinite;
 }
@@ -167,6 +170,13 @@ body {
 .wishes-page.active {
   display: flex;
 }
+
+.wishes-page {
+  -webkit-user-select: none;
+  user-select: none;
+  -webkit-touch-callout: none;
+}
+
 
 .login-container.hidden {
   display: none;
@@ -233,6 +243,7 @@ body {
 
 .confetti {
   position: fixed;
+  top: 0;
   width: 10px;
   height: 10px;
   background: var(--rose);
@@ -245,11 +256,11 @@ body {
 
 @keyframes confetti-fall {
   0% {
-    transform: translateY(-100px) rotate(0deg);
+    transform: translateY(0) rotate(0deg);
     opacity: 1;
   }
   100% {
-    transform: translateY(100vh) rotate(720deg);
+    transform: translateY(80vh) rotate(720deg);
     opacity: 0;
   }
 }
@@ -304,6 +315,7 @@ body {
 
   .heart {
     font-size: 1.2rem;
+    width: 1em;
   }
 
   .wishes-page.bg-juliemaime .bg-decoration .bg-item {
@@ -335,7 +347,7 @@ body {
 
 .wishes-content {
   position: relative;
-  z-index: 1;
+  z-index: 3;
 }
 
 .bg-decoration {
@@ -344,14 +356,39 @@ body {
   left: 0;
   width: 100%;
   height: 100%;
-  pointer-events: none;
   overflow: hidden;
+  z-index: 4;
+  pointer-events: none;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
 }
 
 .bg-item {
   position: absolute;
-  opacity: 0.35;
   animation: bgFloat 12s ease-in-out infinite;
+  cursor: pointer;
+  pointer-events: auto;
+  user-select: none;
+  -webkit-user-select: none;
+  -webkit-touch-callout: none;
+  -webkit-tap-highlight-color: transparent;
+  touch-action: manipulation;
+}
+
+.bg-item-emoji {
+  display: block;
+  opacity: 0.35;
+}
+
+.bg-item-emoji.pop {
+  animation: bgItemPop 0.5s ease forwards;
+}
+
+@keyframes bgItemPop {
+  0% { opacity: 0.35; filter: brightness(1); }
+  50% { opacity: 1; filter: brightness(1.5); }
+  100% { opacity: 0.35; filter: brightness(1); }
 }
 
 .bg-item:nth-child(odd) {
