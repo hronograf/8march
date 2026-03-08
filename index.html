@@ -1,0 +1,43 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0, viewport-fit=cover">
+  <title>Happy 8th of March</title>
+  <link rel="stylesheet" href="assets/css/styles.css">
+</head>
+<body>
+  <div class="floating-hearts"></div>
+
+  <div class="login-container">
+    <div class="login-box">
+      <h1 class="login-title">Happy 8th of March</h1>
+      <p class="login-subtitle">Enter your credentials to receive your wishes</p>
+      <form id="loginForm">
+        <div class="form-group">
+          <label for="login">Login</label>
+          <input type="text" id="login" name="login" autocomplete="username" required>
+        </div>
+        <div class="form-group">
+          <label for="password">Password</label>
+          <input type="password" id="password" name="password" autocomplete="current-password" required>
+        </div>
+        <button type="submit" class="btn-login">Log in</button>
+        <p id="errorMsg" class="error-msg"></p>
+      </form>
+    </div>
+  </div>
+
+  <div id="wishesPage" class="wishes-page">
+    <div class="bg-decoration"></div>
+    <div class="wishes-content">
+      <h2 id="wishesName" class="wishes-name"></h2>
+      <p id="wishesText" class="wishes-text"></p>
+      <button type="button" id="logoutBtn" class="btn-logout">Log out</button>
+    </div>
+  </div>
+
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/js-sha256/0.9.0/sha256.min.js"></script>
+  <script src="assets/js/main.obfuscated.js"></script>
+</body>
+</html>
