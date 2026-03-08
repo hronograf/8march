@@ -34,6 +34,7 @@ body {
 }
 
 .login-box {
+  position: relative;
   background: rgba(255, 255, 255, 0.85);
   backdrop-filter: blur(12px);
   border-radius: 24px;
@@ -119,6 +120,30 @@ body {
 .error-msg.hacker {
   color: var(--rose-dark);
   font-weight: 600;
+}
+
+.error-msg.success-msg {
+  color: var(--rose-dark);
+  font-weight: 500;
+}
+
+.salute-animation {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  font-size: 4rem;
+  animation: saluteWave 1.5s ease-in-out;
+  pointer-events: none;
+  z-index: 10;
+}
+
+@keyframes saluteWave {
+  0% { opacity: 0; transform: translate(-50%, -50%) scale(0.5) rotate(-20deg); }
+  30% { opacity: 1; transform: translate(-50%, -50%) scale(1.2) rotate(10deg); }
+  50% { transform: translate(-50%, -50%) scale(1) rotate(-5deg); }
+  70% { transform: translate(-50%, -50%) scale(1) rotate(5deg); }
+  100% { opacity: 1; transform: translate(-50%, -50%) scale(1) rotate(0deg); }
 }
 
 .floating-hearts {
