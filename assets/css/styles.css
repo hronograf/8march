@@ -136,7 +136,13 @@ body {
   font-size: 1.5rem;
   line-height: 1;
   width: 1em;
-  text-align: center;
+  max-width: 1em;
+  height: 1em;
+  aspect-ratio: 1;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  overflow: hidden;
   opacity: 0.3;
   animation: float 8s ease-in-out infinite;
 }
@@ -315,7 +321,11 @@ body {
 
   .heart {
     font-size: 1.2rem;
-    width: 1em;
+    width: 1.2rem;
+    height: 1.2rem;
+    max-width: 1.2rem;
+    max-height: 1.2rem;
+    overflow: hidden;
   }
 
   .wishes-page.bg-juliemaime .bg-decoration .bg-item {
